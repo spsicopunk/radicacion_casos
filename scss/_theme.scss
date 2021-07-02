@@ -1,0 +1,603 @@
+//---------------- Colors ------------------------
+
+$bluePrim: #008ACC;
+$blueSecond: #112C46;
+$gray: #5D5D5D;
+$red: #E24C4C;
+$whiteGray: #DFE5F9;
+$whiteFondo: #f4f4f4;
+$black: #333333;
+$white: #FFFFFF;
+
+//---------------- Fonts ------------------------
+
+//Gelion-Light
+
+$FontLight: 'gelion-light';
+$FL-Path-woff2: '../assets/fonts/gelion_light/Gelion-Light.woff2';
+$FL-Path-woff: '../assets/fonts/gelion_light/Gelion-Light.woff';
+
+@font-face {
+  font-family: $FontLight;
+  src: url($FL-Path-woff2) format('woff2'),
+  url($FL-Path-woff) format('woff');
+  font-style: normal;
+  font-display: swap;
+}
+
+//Gelion-Regular
+
+$FontRegular: 'gelion-regular';
+$FR-Path-woff2: '../assets/fonts/gelion_regular/Gelion-Regular.woff2';
+$FR-Path-woff: '../assets/fonts/gelion_regular/Gelion-Regular.woff';
+
+@font-face {
+  font-family: $FontRegular;
+  src: url($FR-Path-woff2) format('woff2'),
+  url($FR-Path-woff) format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+//Gelion-medium
+
+$FontMedium: 'gelion-medium';
+$FS-Path-woff2: '../assets/fonts/gelion_medium/Gelion-Medium.woff2';
+$FS-Path-woff: '../assets/fonts/gelion_medium/Gelion-Medium.woff';
+
+@font-face {
+  font-family: $FontMedium;
+  src: url($FS-Path-woff2) format('woff2'),
+  url($FS-Path-woff) format('woff');
+  font-style: normal;
+  font-display: swap;
+}
+
+//Gelion-Bold
+
+$FontBold: 'gelion-bold';
+$FB-Path-woff2: '../assets/fonts/gelion_bold/Gelion-Bold.woff2';
+$FB-Path-woff: '../assets/fonts/gelion_bold/Gelion-Bold.woff';
+
+@font-face {
+  font-family: $FontBold;
+  src: url($FB-Path-woff2) format('woff2'),
+  url($FB-Path-woff) format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+// resets
+
+h1,h2,h3,h4,h5,h6,p,span,ul{
+  padding: 0;
+  margin: 0;
+}
+
+//---------------- Texts and Labels ------------------------
+
+$jumboTitle: 36px/1.3 $FontMedium;
+$titleBold: 24px/1.3 $FontBold;
+$title: 24px/1.3 $FontMedium;
+$titleDescription: 18px/1.3 $FontRegular;
+$titleDescriptionMedium: 18px/1.3 $FontMedium;
+$textModal: 16px/1.3 $FontRegular;
+$inputText: 14px/1.3 $FontRegular;
+$textDescription: 14px/1.3 $FontRegular;
+$textMin: 12px/1.3 $FontRegular;
+
+//---------------- Background ------------------------
+
+body{
+  background: $whiteFondo;
+  font: $textDescription;
+  margin: 0;
+}
+
+//---------------- Containers ------------------------
+
+@mixin cont-center-flex ($direction:row, $alignItems:center, $justify:space-between) {
+  display: block;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $alignItems;
+  max-width: 1014px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.container_fluids{
+  @include cont-center-flex;
+}
+
+//---------------- Boxes ------------------------
+
+.box-primary{
+  background: $white;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0px 1px 4px #{$gray}+70;
+}
+
+
+// Breadcrumb
+
+.breadcrumb-radica{
+  .breadcrumb-radica__list{
+    list-style-type: none;
+    padding: 0;
+    margin: 30px 0px;
+    .breadcrumb-radica__item{
+      display: inline-block;
+      color: $gray;
+      cursor: pointer;
+      &.active_item{
+        color: $bluePrim;
+        font: $inputText;
+      }
+    }
+  }
+}
+
+
+//---------------- Buttons ------------------------
+.btns{
+  height: 40px;
+  text-decoration: none;
+  text-align: center;
+  max-width: 150px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  font: $textDescription;
+  transition: all .3s;
+  &.btns_primary{
+    background: $bluePrim;
+    color: $white;
+    &:hover{
+      background: $blueSecond;
+    }
+  }
+}
+
+
+//forms
+.file-input{
+  margin: 0 auto;
+  display: table;
+  max-width: 260px;
+  width: 100%;
+}
+.input-file-container {
+  position: relative;
+  width: 100%;
+  .input-file-container__badge {
+    background: $blueSecond;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+.js .input-file-trigger {
+  display: block;
+  padding: 11px 15px;
+  background: $white;
+  color: $gray;
+  border: 1px solid $gray;
+  font-size: 1em;
+  transition: all .4s;
+  cursor: pointer;
+}
+.js .input-file {
+  position: absolute;
+  top: 0; left: 0;
+  width: 225px;
+  opacity: 0;
+  padding: 14px 0;
+  cursor: pointer;
+}
+
+.file-return {
+  margin: 0;
+}
+.file-return:not(:empty) {
+  margin: 1em 0 0px;
+}
+.js .file-return {
+  font-style: italic;
+  font-size: .9em;
+  font-weight: bold;
+  display: grid;
+}
+.js .file-return:not(:empty):before {
+  content: "Archivo cargado: ";
+  font-style: normal;
+  font-weight: normal;
+}
+
+
+// Input material
+
+$error: #e53935;
+$warning: #F9A825;
+
+
+.outlined-input-field {
+  position: relative;
+  font: $inputText;
+
+  i {
+    position: absolute;
+    top: 0.8rem;
+  }
+
+  .error-icon, .warning-icon, .helper-text {
+    display: none;
+  }
+
+  label {
+    background-color: #FFFFFF;
+    color: $gray;
+    cursor: text;
+    position: absolute;
+    top: 12px;
+    left: 11px;
+    font: $textModal;
+  }
+
+  .outlined-text-field {
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    background-color: #00000000;
+    border: 1px solid $gray;
+    border-radius: 4px;
+    color: $gray;
+    width: 100%;
+    padding: 10px 0px 10px 15px;
+    outline-offset: 0;
+    box-sizing: border-box;
+    font: $textModal;
+    &.fill_active{
+      border: 1px solid $bluePrim;
+      caret-color: $bluePrim;
+      color: #112C46;
+    }
+    &.fill_active + label{
+      color: $bluePrim;
+    }
+  }
+
+  .outlined-text-field:focus, .outlined-select-field:focus {
+    border: 1px solid $bluePrim;
+    caret-color: $bluePrim;
+    color: $blueSecond;
+    outline: none;
+    outline-offset: 0;
+
+    + label {
+      color: $bluePrim;
+    }
+  }
+}
+
+.error-input-field {
+  .outlined-text-field {
+    border-color: $error;
+
+    + label {
+      color: $error;
+    }
+
+    ~ .error-icon {
+      display: initial;
+      color: $error;
+      position: absolute;
+      top: 1rem;
+      right: 3rem;
+    }
+
+    ~ .helper-text {
+      display: initial;
+      color: $error;
+      font-size: 0.75rem;
+      position: absolute;
+      top: 3.2rem;
+      left: 2rem;
+    }
+  }
+
+
+  .outlined-text-field:focus {
+    border-color: $error;
+    caret-color: $error;
+
+    + label {
+      color: $error;
+    }
+  }
+}
+
+.warning-input-field {
+  .outlined-text-field {
+    border-color: $warning;
+
+    + label {
+      color: $warning;
+    }
+
+    ~ .warning-icon {
+      display: initial;
+      color: $warning;
+      position: absolute;
+      top: 1rem;
+      right: 3rem;
+    }
+
+    ~ .helper-text {
+      display: initial;
+      color: $warning;
+      font-size: 0.75rem;
+      position: absolute;
+      top: 3.2rem;
+      left: 2rem;
+    }
+  }
+
+  .outlined-text-field:focus {
+    border-color: $warning;
+    caret-color: $warning;
+
+    + label {
+      color: $warning;
+    }
+  }
+}
+
+.outlined-select-field {
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  background-color: #00000000;
+  border: 1pt solid #757575;
+  border-radius: 4px;
+  color: #757575;
+  margin-left: 2rem;
+  padding: 1rem;
+  width: calc(100% - 4rem);
+
+  ~ .dropdown-icon {
+    top: 1rem;
+    right: 2.5rem;
+  }
+}
+
+
+// select outlined
+
+/* select starting stylings ------------------------------*/
+.select {
+  font: $inputText;
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.select-text {
+  position: relative;
+  font-family: inherit;
+  background-color: transparent;
+  width: 100%;
+  padding: 11px 10px 12px 14px;
+  font-size: 16px;
+  border-radius: 4px;
+  border: 1px solid $gray;
+  cursor: pointer;
+  &.fill_active{
+    border: 1px solid $bluePrim;
+  }
+}
+
+/* Remove focus */
+.select-text:focus {
+  outline: none;
+  border: 1px solid $bluePrim;
+}
+
+/* Use custom arrow */
+.select .select-text {
+  appearance: none;
+  -webkit-appearance:none;
+  color: $blueSecond;
+}
+
+.select:after {
+  position: absolute;
+  top: 18px;
+  right: 10px;
+  /* Styling the down arrow */
+  width: 0;
+  height: 0;
+  padding: 0;
+  content: '';
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid $blueSecond;
+  pointer-events: none;
+}
+
+/* LABEL ======================================= */
+.select-label {
+  color: $gray;
+  background: white;
+  font-size: 16px;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  padding: 0 5px;
+  left: 10px;
+  transition: 0.2s ease all;
+  width: 90%;
+}
+
+
+/* active state */
+.select-text:focus ~ .select-label, .select-text:valid ~ .select-label {
+  color: $bluePrim;
+  top: -8px;
+  transition: 0.2s ease all;
+  font: $inputText;
+  width: auto;
+}
+
+.select-text:valid:not(focus) ~ .select-label {
+  color: $bluePrim;
+}
+.select-text:valid:focus ~ .select-label {
+  color: $bluePrim;
+}
+
+//Grid
+$grid-columns:12;
+$grid-gutter:1.5em;
+$max-page-width:1200px;
+$contained: 80%; // limits width of contained content, not XS,  optional
+
+$xs-breakpoint: 0;
+$sm-breakpoint:576px;
+$md-breakpoint:768px;
+$lg-breakpoint:992px;
+$xl-breakpoint:1200px;
+
+
+.container {
+  max-width:$max-page-width;
+  margin:0 auto;
+}
+.container-fluid {
+  max-width:100%;
+}
+.row {
+  display: grid;
+  grid-template-columns: repeat($grid-columns, 1fr);/*cols x freespace*/
+  grid-gap: $grid-gutter;
+}
+.contained {
+  max-width:$contained;
+  margin:0 auto;
+}
+
+/* Build Bootstrap's Grid */
+@for $i from 1 through $grid-columns {
+  .col-xs-#{$i} {
+    grid-column: span ($i);
+  }
+}
+@for $i from 1 through $grid-columns {
+  .col-sm-#{$i} {
+    grid-column: span ($i);
+  }
+}
+@for $i from 1 through $grid-columns {
+  .col-md-#{$i} {
+    grid-column: span ($i);
+  }
+}
+@for $i from 1 through $grid-columns {
+  .col-lg-#{$i} {
+    grid-column: span ($i);
+  }
+}
+@for $i from 1 through $grid-columns {
+  .col-xl-#{$i} {
+    grid-column: span ($i);
+  }
+}
+
+/* Bootstrap grid break points */
+/* extra small */
+@media (max-width: $sm-breakpoint) {
+  @for $i from 1 through $grid-columns {
+    .col-xs-#{$i} {
+      grid-column: span ($i);
+    }
+  }
+  /* helper classes */
+  .hidden-xs {display:none;}
+  .container {max-width:$max-page-width;}
+}
+
+
+/* small */
+@media (min-width:$sm-breakpoint) and (max-width: $md-breakpoint) {
+  @for $i from 1 through $grid-columns {
+    .col-sm-#{$i} {
+      grid-column: span ($i);
+    }
+  }
+  /* helper classes */
+  .hidden-sm {display:none;}
+}
+
+/* medium */
+@media (min-width:$md-breakpoint) and (max-width: $lg-breakpoint) {
+  @for $i from 1 through $grid-columns {
+    .col-md-#{$i} {
+      grid-column: span ($i);
+    }
+  }
+  /* helper classes */
+  .hidden-md {display:none;}
+}
+
+/* large */
+@media (min-width:$lg-breakpoint) and (max-width: $xl-breakpoint) {
+  @for $i from 1 through $grid-columns {
+    .col-lg-#{$i} {
+      grid-column: span ($i);
+    }
+  }
+  /* helper classes */
+  .hidden-lg {display:none;}
+}
+
+/*extra large */
+@media (min-width:$xl-breakpoint) {
+  @for $i from 1 through $grid-columns {
+    .col-xl-#{$i} {
+      grid-column: span ($i);
+    }
+  }
+  /* helper classes */
+  .hidden-xl {display:none;}
+}
+
+// additional styling
+.hidebottomborder {border-bottom:none;}
+
+// offset, push and pull require more work
+@for $i from 1 through $grid-columns {
+  .offset-#{$i} {
+    grid-column-start: ($i + 1);
+    grid-column-end: span ($grid-columns - $i);
+  }
+  .push-#{$i} {
+    grid-column-start: ($i + 1);
+    grid-column-end: span ($i);
+  }
+  .pull-#{$i} {
+    grid-column-start: ($grid-columns - $i);
+    grid-column-end: span ($i);
+  }
+}
+

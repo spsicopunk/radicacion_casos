@@ -1,0 +1,125 @@
+// Radicación Manual
+
+.rad-manual{
+  margin: 0 auto;
+  max-width: 845px;
+  &.open{
+    display: block;
+  }
+}
+
+// Radicación
+
+.radica-block{
+  margin-bottom: 20px;
+  .radica-block__title{
+    font: $jumboTitle;
+    text-align: center;
+    color: $bluePrim;
+    margin: 30px 0px 0px;
+  }
+  .radica-block__subtitle{
+    font: $titleDescription;
+    text-align: center;
+    color: $gray;
+    margin: 30px 0px 0px;
+    &.color_blue{
+      color: $blueSecond;
+      margin-top: 50px;
+      font: $titleDescriptionMedium;
+    }
+  }
+  .radica-boxes{
+    display: flex;
+    justify-content: center;
+    max-width: 845px;
+    margin: 40px auto;
+    .radica-boxes__item{
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 20px;
+      padding: 30px 0px;
+      cursor: pointer;
+      transition: all .3s;
+      &:last-child{
+        margin-right: 0px;
+        margin-left: 20px;
+      }
+      &:hover{
+        background: $whiteGray;
+      }
+      .radica-boxes__radio{
+        width: 20px;
+        height: 20px;
+      }
+    }
+    .radica-boxes_txt {
+      width: 50%;
+      margin: 0 20px;
+      .radica-boxes__title{
+        color: $blueSecond;
+        margin-bottom: 10px;
+      }
+      .radica-boxes__text{
+        color: $gray;
+        font: $inputText;
+      }
+    }
+    .radica-boxes__img{
+      margin-right: 10px;
+    }
+  }
+  .rad-manual{
+    .rad-manual__title{
+       color: $blueSecond;
+    }
+    .rad-manual__form {
+      margin-top: 40px;
+      .rad-manual__textlabel{
+        font: $titleDescriptionMedium;
+        color: $bluePrim;
+        text-align: center;
+        margin: 20px 0px 40px;
+      }
+      .textarea__look{
+        height: 150px;
+        min-height: 150px;
+        max-height: 150px;
+        max-width: 100%;
+        min-width: 100%;
+        padding: 15px;
+      }
+      .rad-manual__textmin{
+        font: $textMin;
+        color:$blueSecond;
+        font-weight: bold;
+      }
+      .captcha {
+        margin: 30px auto;
+        display: table;
+      }
+      .send__btn {
+        margin: 0 auto 40px;
+      }
+    }
+  }
+  .upload-file{
+    max-width: 500px;
+    margin: 0 auto;
+    .radica-block__subtitle{
+      margin-bottom: 40px;
+    }
+    .captchav3{
+      margin: 30px auto 0px;
+      display: table;
+    }
+    .upload-file__btn{
+        margin: 30px auto 50px;
+    }
+  }
+}
+
+
+

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<!-- saved from url=(0045)http://localhost:3000/Radicacion_casos.html?# -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>Formulario Corresponsales</title>
+    <link rel="stylesheet" href="./Formulario Corresponsales_files/main.css">
+</head>
+<body cz-shortcut-listen="true"><script type="text/javascript" async="" src="./Formulario Corresponsales_files/recaptcha__es_419.js.descarga" crossorigin="anonymous" integrity="sha384-nOaq6CzD6nH3UvDWORPeMVr4zRvVn8FCN2i5jpY6QXnfMywjkis27AmwC657kyGR"></script><script id="__bs_script__">//<![CDATA[
+    document.write("<script async src='/browser-sync/browser-sync-client.js?v=2.27.3'><\/script>".replace("HOST", location.hostname));
+//]]></script><script async="" src="./Formulario Corresponsales_files/browser-sync-client.js.descarga"></script>
+
+<div class="container_fluids">
+    <div class="breadcrumb-radica">
+        <ul class="breadcrumb-radica__list">
+            <li class="breadcrumb-radica__item">Inicio</li>
+            <li class="breadcrumb-radica__item active_item">- Radicacion de Casos</li>
+        </ul>
+    </div>
+    <section class="radica-block box-primary">
+        <h1 class="radica-block__title">Radicación de Casos</h1>
+        <h2 class="radica-block__subtitle">Seleccione  el tipo de cargue para la radicación de corresponsales</h2>
+        <div class="radica-boxes">
+            <label class="radica-boxes__item box-primary">
+                <input type="radio" class="radica-boxes__radio" id="itemForm" name="category" value="itemForm">
+                <div class="radica-boxes_txt">
+                    <h3 class="radica-boxes__title">Radicación Manual</h3>
+                    <p class="radica-boxes__text">Diligencia la información para crear la radicación.</p>
+                </div>
+                <img src="./Formulario Corresponsales_files/form_color.png" class="radica-boxes__img" alt="Radica Manual">
+            </label>
+            <label class="radica-boxes__item box-primary">
+                <input type="radio" class="radica-boxes__radio" id="itemUpload" name="category" value="itemUpload">
+                <div class="radica-boxes_txt">
+                    <h3 class="radica-boxes__title">Cargue de Archivos</h3>
+                    <p class="radica-boxes__text">Cargue un archivo con multiples registros de radicación.</p>
+                </div>
+                <img src="./Formulario Corresponsales_files/file_color.png" class="radica-boxes__img" alt="Radica Manual">
+            </label>
+        </div>
+        <section class="upload-file" hidden="">
+            <h3 class="radica-block__subtitle color_blue">Adjunte un archivo en extensión .xlsx .pdf o .txt </h3>
+            <div class="file-input">
+                <form action="http://localhost:3000/Radicacion_casos.html?#">
+                    <div class="input-file-container">
+                        <input class="input-file" id="my-file" type="file">
+                        <label tabindex="0" for="my-file" class="input-file-trigger">Cargue masivo de archivos
+                            <span class="input-file-container__badge">
+                            <img src="./Formulario Corresponsales_files/upload.png" alt="upload ">
+                        </span>
+                        </label>
+                    </div>
+                    <p class="file-return"></p>
+                </form>
+            </div>
+            <div id="captchav3" class="captchav3"></div>
+            <a href="http://localhost:3000/Radicacion_casos.html?#" class="btns btns_primary upload-file__btn">Enviar</a>
+        </section>
+        <section class="rad-manual">
+            <h3 class="rad-manual__title">Diligencia los siguientes datos.</h3>
+            <form action="http://localhost:3000/Radicacion_casos.html?" class="row">
+                <div class="outlined-input-field form-group_item col-md-3" hidden=""> <!--error-input-field-->
+                    <input type="text" id="input_outline" class="input_outline outlined-text-field" autocomplete="off">
+                    <label for="input_outline">Username</label>
+                    <div class="helper-text"></div>
+                </div>
+                <div class="form-group_item col-md-4">
+                    <div class="select">
+                        <select class="select-text" required="">
+                            <option value="" disabled="" selected="">Seleccione un canal</option>
+                            <option value="1">Corresponsal</option>
+                            <option value="2">ATH</option>
+                        </select>
+                        <label class="select-label">Canal de radicación</label>
+                    </div>
+                </div>
+                <div class="form-group_item col-md-4">
+                    <div class="select">
+                        <select class="select-text" required="">
+                            <option value="" disabled="" selected=""></option>
+                            <option value="1">Option 1</option>
+                            <option value="2">Option 2</option>
+                            <option value="3">Option 3</option>
+                        </select>
+                        <label class="select-label">Select</label>
+                    </div>
+                </div>
+                <div class="form-group_item col-md-4">
+                    <div class="select">
+                        <select class="select-text" required="">
+                            <option value="" disabled="" selected=""></option>
+                            <option value="1">Option 1</option>
+                            <option value="2">Option 2</option>
+                            <option value="3">Option 3</option>
+                        </select>
+                        <label class="select-label">Select</label>
+                    </div>
+                </div>
+                <div class="form-group_item col-md-4"></div>
+                <div class="form-group_item col-md-4"></div>
+                <div class="form-group_item col-md-4"></div>
+                <div class="form-group_item col-md-4"></div>
+                <div class="form-group_item col-md-4"></div>
+                <div class="form-group_item col-md-4"></div>
+                <div class="form-group_item col-md-4"></div>
+                <div class="form-group_item col-md-4"></div>
+                <div class="form-group_item col-md-4"></div>
+                <div class="form-group_item col-md-4"></div>
+                <div class="form-group_item col-md-4"></div>
+                <div class="form-group_item col-md-4"></div>
+                <div class="form-group_item col-md-4"></div>
+
+            </form>
+        </section>
+    </section>
+</div>
+
+
+
+<!--jquery-->
+<script src="./Formulario Corresponsales_files/jquery.min.js.descarga"></script>
+<!--forms-->
+<script src="./Formulario Corresponsales_files/forms_material.js.descarga"></script>
+<script src="./Formulario Corresponsales_files/api.js.descarga"></script>
+<script>
+    import {MDCTextField} from '@material/textfield';
+
+    const textField = new MDCTextField(document.querySelector('.mdc-text-field'));
+
+
+    function onRecaptchaLoadCallback() {
+        var clientId = grecaptcha.render('captchav3', {
+            'sitekey': '6LdvEmobAAAAAIH5HUTOt3ThiKgzI4zDE78spEpR',
+            'badge': 'inline',
+            'size': 'invisible'
+        });
+
+        grecaptcha.ready(function() {
+            grecaptcha.execute(clientId, {
+                action: 'action_name'
+            })
+                .then(function(token) {
+                    // Verify the token on the server.
+                });
+        });
+    }
+
+    /*input file function*/
+
+    document.querySelector("html").classList.add('js');
+
+    var fileInput  = document.querySelector( ".input-file" ),
+        button     = document.querySelector( ".input-file-trigger" ),
+        the_return = document.querySelector(".file-return");
+
+    button.addEventListener( "keydown", function( event ) {
+        if ( event.keyCode == 13 || event.keyCode == 32 ) {
+            fileInput.focus();
+        }
+    });
+    button.addEventListener( "click", function( event ) {
+        fileInput.focus();
+        return false;
+    });
+    fileInput.addEventListener( "change", function( event ) {
+        the_return.innerHTML = this.value;
+    });
+</script>
+
+</body></html>

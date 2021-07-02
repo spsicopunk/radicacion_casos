@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario Corresponsales</title>
+    <link rel='stylesheet' href='https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css'>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+<div class="container_fluids">
+    <div class="breadcrumb-radica">
+        <ul class="breadcrumb-radica__list">
+            <li class="breadcrumb-radica__item">Inicio</li>
+            <li class="breadcrumb-radica__item active_item">- Radicacion de Casos</li>
+        </ul>
+    </div>
+    <section class="radica-block box-primary">
+        <h1 class="radica-block__title">Radicación de Casos</h1>
+        <h2 class="radica-block__subtitle">Seleccione  el tipo de cargue para la radicación de corresponsales</h2>
+        <div class="radica-boxes">
+            <label class="radica-boxes__item box-primary">
+                <input type="radio" class="radica-boxes__radio" id="itemForm" name="category" value="itemForm">
+                <div class="radica-boxes_txt">
+                    <h3 class="radica-boxes__title">Radicación Manual</h3>
+                    <p class="radica-boxes__text">Diligencia la información para crear la radicación.</p>
+                </div>
+                <img src="assets/img/form_color.png" class="radica-boxes__img" alt="Radica Manual">
+            </label>
+            <label class="radica-boxes__item box-primary">
+                <input type="radio" class="radica-boxes__radio" id="itemUpload" name="category" value="itemUpload">
+                <div class="radica-boxes_txt">
+                    <h3 class="radica-boxes__title">Cargue de Archivos</h3>
+                    <p class="radica-boxes__text">Cargue un archivo con multiples registros de radicación.</p>
+                </div>
+                <img src="assets/img/file_color.png" class="radica-boxes__img" alt="Radica Manual">
+            </label>
+        </div>
+        <section class="upload-file" hidden>
+            <h3 class="radica-block__subtitle color_blue">Adjunte un archivo en extensión .xlsx .pdf o .txt </h3>
+            <div class="file-input">
+                <form action="#">
+                    <div class="input-file-container">
+                        <input class="input-file" id="my-file" type="file">
+                        <label tabindex="0" for="my-file" class="input-file-trigger">Cargue masivo de archivos
+                            <span class="input-file-container__badge">
+                            <img src="assets/img/upload.png" alt="upload ">
+                        </span>
+                        </label>
+                    </div>
+                    <p class="file-return"></p>
+                </form>
+            </div>
+            <div id="captchav3" class="captchav3"></div>
+            <a href="#" class="btns btns_primary upload-file__btn">Enviar</a>
+        </section>
+        <section class="rad-manual" hidden>
+            <h3 class="rad-manual__title">Diligencia los siguientes datos.</h3>
+            <form action="enviar" class="row rad-manual__form">
+                <div class="form-group_item col-md-4 col-xs-12">
+                    <div class="select">
+                        <select class="select-text" required>
+                            <option value="" disabled selected>Seleccione un canal</option>
+                            <option value="1">Corresponsal</option>
+                            <option value="2">ATH</option>
+                        </select>
+                        <label class="select-label">Canal de radicación *</label>
+                    </div>
+                </div>
+                <div class="form-group_item col-md-4 col-xs-12">
+                    <div class="select">
+                        <select class="select-text" required>
+                            <option value="" disabled selected>Seleccione reclamante</option>
+                            <option value="1">Usuario</option>
+                            <option value="2">Corresponsal Bancario</option>
+                            <option value="3">Convenio</option>
+                        </select>
+                        <label class="select-label">Reclamante *</label>
+                    </div>
+                </div>
+                <div class="form-group_item col-md-4 col-xs-12">
+                    <div class="select">
+                        <select class="select-text" required>
+                            <option value="" disabled selected>Seleccione un corresponsal</option>
+                            <option value="1">Efecty</option>
+                            <option value="2">GTECH_Baloto</option>
+                            <option value="3">Redeban</option>
+                            <option value="4">Credibanco</option>
+                            <option value="5">Seapto S.A.</option>
+                            <option value="6">Tranza S.A.S. - Movilred</option>
+                            <option value="7">Maxiservicios</option>
+                            <option value="8">Puntored</option>
+                            <option value="9">Otros</option>
+                        </select>
+                        <label class="select-label">Corresponsal donde curso la transacción</label>
+                    </div>
+                </div>
+                <div class="form-group_item col-md-4 col-xs-12">
+                    <div class="outlined-input-field"> <!--error-input-field-->
+                        <input type="text" id="input_outline" class="input_outline outlined-text-field" autocomplete="off">
+                        <label for="input_outline">Número de radicado</label>
+                        <div class="helper-text"></div>
+                    </div>
+                </div>
+                <div class="form-group_item col-md-4 col-xs-12">
+                    <div class="select">
+                        <select class="select-text" required>
+                            <option value="" disabled selected>Seleccione una Típologia</option>
+                            <option value="1">Abono convenio errado</option>
+                            <option value="2">Referencia errada</option>
+                            <option value="3">Pago Duplicado/Error Sistema</option>
+                            <option value="4">Mayor valor pago</option>
+                            <option value="5">Pago no aplicado</option>
+                            <option value="6">Otros</option>
+                        </select>
+                        <label class="select-label">Típologia *</label>
+                    </div>
+                </div>
+                <div class="form-group_item col-md-4 col-xs-12">
+                    <div id="datepicker-container" class="datepicker-container outlined-input-field">
+                        <span class="outline-element-container">
+                            <input id="datepicker-input" type="text" class="datepicker-input input_outline outlined-text-field" objtype="7" name="action_element" objindex=""  aria-label="Select Date">
+                            <label for="datepicker-input">Fecha de escalamiento *</label>
+                        </span>
+                        <div id="datepicker"></div>
+                    </div>
+                </div>
+                <div class="form-group_item col-md-4 col-xs-12">
+                    <div class="form-group_item col-md-4 col-xs-12">
+                        <div id="datepicker-container2" class="datepicker-container outlined-input-field">
+                        <span class="outline-element-container">
+                            <input id="datepicker-input2" type="text" class="datepicker-input2 input_outline outlined-text-field">
+                            <label for="datepicker-input2">Fecha de la transacción *</label>
+                        </span>
+                            <div id="datepicker2"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group_item col-md-4 col-xs-12">
+                    <div class="outlined-input-field"> <!--error-input-field-->
+                        <input type="text" id="input_nura" class="input_outline outlined-text-field" autocomplete="off">
+                        <label for="input_nura">Nura errado *</label>
+                        <div class="helper-text"></div>
+                    </div>
+                </div>
+                <div class="form-group_item col-md-4 col-xs-12">
+                    <div class="outlined-input-field"> <!--error-input-field-->
+                        <input type="text" id="input_convenio" class="input_outline outlined-text-field" autocomplete="off">
+                        <label for="input_convenio">Convenio errado *</label>
+                        <div class="helper-text"></div>
+                    </div>
+                </div>
+                <div class="form-group_item col-md-4 col-xs-12">
+                    <div class="outlined-input-field"> <!--error-input-field-->
+                        <input type="text" id="input_correcto" class="input_outline outlined-text-field" autocomplete="off">
+                        <label for="input_correcto">Nura correcto *</label>
+                        <div class="helper-text"></div>
+                    </div>
+                </div>
+                <div class="form-group_item col-md-4 col-xs-12">
+                    <div class="outlined-input-field"> <!--error-input-field-->
+                        <input type="text" id="input_convenioCorr" class="input_outline outlined-text-field" autocomplete="off">
+                        <label for="input_convenioCorr">Convenio correcto *</label>
+                        <div class="helper-text"></div>
+                    </div>
+                </div>
+                <div class="form-group_item col-md-4 col-xs-12">
+                    <div class="outlined-input-field"> <!--error-input-field-->
+                        <input type="text" id="input_transaccion" class="input_outline outlined-text-field" autocomplete="off">
+                        <label for="input_transaccion">Valor de la transacción *</label>
+                        <div class="helper-text"></div>
+                    </div>
+                </div>
+                <div class="form-group_item col-md-4 col-xs-12">
+                    <div class="outlined-input-field"> <!--error-input-field-->
+                        <input type="text" id="input_abono" class="input_outline outlined-text-field" autocomplete="off">
+                        <label for="input_abono">Datos de abono *</label>
+                        <div class="helper-text"></div>
+                    </div>
+                </div>
+                <div class="form-group_item col-md-4 col-xs-12">
+                    <div class="select">
+                        <select class="select-text" required>
+                            <option value="" disabled selected>Seleccione la solicitud</option>
+                            <option value="1">Recuperación</option>
+                        </select>
+                        <label class="select-label">Tipo de solicitud *</label>
+                    </div>
+                </div>
+                <div class="form-group_item col-md-12">
+                    <h3 class="rad-manual__textlabel">Cuéntanos brevemente la situación por la cual quieres hacer la radicación</h3>
+                    <div class="outlined-input-field"> <!--error-input-field-->
+                        <textarea type="text" id="textarea_comment" class="textarea__look input_outline outlined-text-field" autocomplete="off"></textarea>
+                        <label for="textarea_comment">Observaciones</label>
+                    </div>
+                    <span class="rad-manual__textmin">Máximo 400 caracteres</span>
+                    <div id="captchav4" class="captchav4 captcha"></div>
+                    <a href="#" class="btns btns_primary send__btn">Enviar</a>
+                </div>
+            </form>
+        </section>
+    </section>
+</div>
+</body>
+</html>
+
+<!--jquery-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js'></script>
+<!--forms-->
+<script src="js/forms_material.js"></script>
+<!--recaptcha-->
+<script src="https://www.google.com/recaptcha/api.js?render=explicit&onload=onRecaptchaLoadCallback"></script>
+<script>
+
+    $(".radica-boxes__radio").click(function(){
+        if($(this).prop("checked") == true && $(this)[0].id == "itemUpload"){
+            $(".upload-file").removeAttr("hidden")
+            $(".rad-manual").attr("hidden","hidden")
+        }else{
+            $(".rad-manual").removeAttr("hidden")
+            $(".upload-file").attr("hidden","hidden")
+        }
+    })
+
+    function onRecaptchaLoadCallback() {
+        var clientId = grecaptcha.render('captchav4', {
+            'sitekey': '6LdvEmobAAAAAIH5HUTOt3ThiKgzI4zDE78spEpR',
+            'badge': 'inline',
+            'size': 'invisible'
+        });
+
+        grecaptcha.ready(function() {
+            grecaptcha.execute(clientId, {
+                action: 'action_name'
+            })
+                .then(function(token) {
+                    // Verify the token on the server.
+                });
+        });
+    }
+</script>
+
