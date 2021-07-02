@@ -1,4 +1,4 @@
-##Instalación de sass
+## Instalación de sass
 
 Ejecutar en el proyecto
 
@@ -8,7 +8,7 @@ Ya dentro del directorio `scss` ejecutamos el siguiente comando para transpilar 
 
 `sass --watch main.scss ../css/main.css`
 
-##Instalación de Browser-sync
+## Instalación de Browser-sync
 
 Para tener cambios en tiempo real de los proyectos instalar:
 
