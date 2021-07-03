@@ -35,7 +35,7 @@
 }
 
 .ui-datepicker-header {
-  background-color: #3e9aba !important;
+  background-color: $bluePrim !important;
   background-image: none !important;
   border-radius: 0;
 }
@@ -114,21 +114,21 @@
 
 .ui-datepicker-month {
   border-radius: 2px;
-  background-color: #3985a0;
+  background-color: $bluePrim;
   width: 110px !important;
   height: 22px;
-  font-family: Open Sans !important;
+  font: $inputText;
   color: #fff;
-  font-size: 14px !important;
-  font-weight: 600;
   text-align: left;
   border: none !important;
   margin-right: 17px !important;
   vertical-align: text-top;
+  top: -4px;
+  position: relative;
 }
 
 .openemr-calendar .ui-datepicker-month {
-  font-family: Open Sans, Arial, sans-serif;
+  font: $inputText;
   color: rgba(34, 34, 34, 0.87);
   font-size: 12px !important;
   font-weight: 700;
@@ -138,34 +138,32 @@
 
 .ui-datepicker-year {
   border-radius: 2px;
-  background-color: #3985a0;
+  background-color: $bluePrim;
   width: 61px !important;
   height: 22px;
   border: none !important;
-  font-family: Open Sans !important;
+  font: $inputText;
   color: #fff;
   font-size: 14px !important;
-  font-weight: 600;
   text-align: left;
   vertical-align: text-top;
+  top: -4px;
+  position: relative;
 }
 
 .openemr-calendar .ui-datepicker-year {
-  font-family: Open Sans, Arial, sans-serif;
+  font: $inputText;
   color: rgba(34, 34, 34, 0.87);
   font-size: 12px !important;
-  font-weight: 700;
   text-align: center;
   transform: scaleX(1.0029)
 }
 
 .ui-datepicker-month option,
 .ui-datepicker-year option {
-  color: #3985a0 !important;
+  color: $bluePrim !important;
   background-color: #fff !important;
-  font-family: Open Sans !important;
-  font-size: 14px !important;
-  font-weight: 600;
+  font: $inputText !important;
 }
 
 .ui-datepicker-month option[selected],
@@ -186,22 +184,21 @@
   border-radius: 2px;
   border-color: #edebeb !important;
   background: white !important;
-  width: 24px;
-  height: 24px;
-  padding: 0 !important;
+  padding: 5px 0px !important;
   line-height: 24px;
   text-align: center !important;
-  font-family: Open Sans, Arial, sans-serif;
+  font: $inputText;
   color: #707070;
-  font-size: 13px;
-  font-weight: 400 !important;
-  margin: 7px 0 0 4px;
+  margin: 0px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .ui-datepicker .ui-state-default.ui-state-highlight{
   border-color: #dcdcdc;
-  background-color: #cff3f8 !important;
-  color: #3e9aba !important;
+  background-color: $blueSecond !important;
+  color: $white !important;
 }
 .openemr-calendar .ui-state-default {
   font-size: 10px;
@@ -223,21 +220,20 @@
 }
 
 .ui-state-default.ui-state-hover {
-  border-color: #dcdcdc;
-  background-color: #cff3f8 !important;
+  background-color: $bluePrim !important;
+  color: $white;
 }
 
 .ui-datepicker .ui-state-active {
   border-color: #dcdcdc;
-  background-color: #cff3f8 !important;
-  color: #3e9aba !important;
+  background-color: $blueSecond !important;
+  color: $white !important;
 }
 
 .ui-datepicker-calendar thead tr th {
-  font-family: Open Sans, Arial, sans-serif;
-  color: #549fa8;
+  font: $inputText;
+  color: $bluePrim;
   font-size: 12px;
-  font-weight: 400;
   padding: 0.45em 0.3em !important;
   /*   width: 15px !important; */
 }
@@ -260,10 +256,8 @@
 
 .ui-state-default.ui-datepicker-current {
   float: none !important;
-  font-family: Open Sans, Arial, sans-serif;
+  font: $inputText;
   color: #fff;
-  font-size: 14px;
-  font-weight: 400;
   text-align: left;
   border-width: 0 !important;
   border: none;
@@ -274,7 +268,7 @@
 
 .ui-datepicker-buttonpane.ui-widget-content {
   text-align: center;
-  background-color: #3e9aba;
+  background-color: $bluePrim;
   margin: 0 !important;
   height: 28px;
   padding: 0 !important;

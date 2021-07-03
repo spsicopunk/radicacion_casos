@@ -234,7 +234,6 @@ $warning: #F9A825;
 .outlined-input-field {
   position: relative;
   font: $inputText;
-
   i {
     position: absolute;
     top: 0.8rem;
@@ -247,11 +246,22 @@ $warning: #F9A825;
   label {
     background-color: #FFFFFF;
     color: $gray;
-    cursor: text;
+    cursor: pointer;
     position: absolute;
     top: 12px;
     left: 11px;
     font: $textModal;
+  }
+  .rad-manual__icon {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    font-size: 28px;
+    pointer-events: none;
+    cursor: pointer;
+    &:before{
+      color: $gray;
+    }
   }
 
   .outlined-text-field {
@@ -272,7 +282,7 @@ $warning: #F9A825;
       caret-color: $bluePrim;
       color: #112C46;
     }
-    &.fill_active + label{
+    &.fill_active + label, &.fill_active ~ span:before{
       color: $bluePrim;
     }
   }
@@ -367,7 +377,6 @@ $warning: #F9A825;
   appearance: none;
   -moz-appearance: none;
   -webkit-appearance: none;
-  background-color: #00000000;
   border: 1pt solid #757575;
   border-radius: 4px;
   color: #757575;
@@ -601,3 +610,79 @@ $xl-breakpoint:1200px;
   }
 }
 
+// ------------------- Modales --------------------------
+
+#modal-general .mensaje {
+  margin: 0;
+}
+.modalText {
+  text-align: center;
+  margin: 0 0 20px;
+  font: 20px/1.3 var(--tipoRg);
+}
+
+
+// --------------------- Iconos --------------------------
+
+
+$pathIcon: '../assets/fonts/icons/';
+
+@font-face {
+  font-family: 'icomoon';
+  src:   url(  '#{$pathIcon}icomoon.eot?ux9m4t');
+  src:  url('#{$pathIcon}icomoon.eot?ux9m4t#iefix') format('embedded-opentype'),
+  url('#{$pathIcon}icomoon.ttf?ux9m4t') format('truetype'),
+  url('#{$pathIcon}icomoon.woff?ux9m4t') format('woff'),
+  url('#{$pathIcon}icomoon.svg?ux9m4t#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-calendar:before {
+  content: "\e900";
+  color: #008acc;
+}
+.icon-edit:before {
+  content: "\e901";
+  color: #008acc;
+}
+.icon-equis:before {
+  content: "\e902";
+  color: #008acc;
+}
+.icon-eye_hide:before {
+  content: "\e903";
+  color: #5d5d5d;
+}
+.icon-eye_show:before {
+  content: "\e904";
+  color: #008acc;
+}
+.icon-login:before {
+  content: "\e905";
+  color: #e24c4c;
+}
+.icon-search:before {
+  content: "\e906";
+  color: #008acc;
+}
+.icon-trash:before {
+  content: "\e907";
+  color: #e24c4c;
+}

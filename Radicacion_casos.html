@@ -118,20 +118,20 @@
                 <div class="form-group_item col-md-4 col-xs-12">
                     <div id="datepicker-container" class="datepicker-container outlined-input-field">
                         <span class="outline-element-container">
-                            <input id="datepicker-input" type="text" class="datepicker-input input_outline outlined-text-field" objtype="7" name="action_element" objindex=""  aria-label="Select Date">
+                            <input id="datepicker-input" type="text" class="datepicker-input input_outline outlined-text-field" autocomplete="off">
                             <label for="datepicker-input">Fecha de escalamiento *</label>
+                            <span class="icon-calendar rad-manual__icon"></span>
                         </span>
-                        <div id="datepicker"></div>
                     </div>
                 </div>
                 <div class="form-group_item col-md-4 col-xs-12">
                     <div class="form-group_item col-md-4 col-xs-12">
                         <div id="datepicker-container2" class="datepicker-container outlined-input-field">
                         <span class="outline-element-container">
-                            <input id="datepicker-input2" type="text" class="datepicker-input2 input_outline outlined-text-field">
+                            <input id="datepicker-input2" type="text" class="datepicker-input2 input_outline outlined-text-field" autocomplete="off">
                             <label for="datepicker-input2">Fecha de la transacción *</label>
+                            <span class="icon-calendar rad-manual__icon"></span>
                         </span>
-                            <div id="datepicker2"></div>
                         </div>
                     </div>
                 </div>
@@ -194,7 +194,7 @@
                     </div>
                     <span class="rad-manual__textmin">Máximo 400 caracteres</span>
                     <div id="captchav4" class="captchav4 captcha"></div>
-                    <a href="#" class="btns btns_primary send__btn">Enviar</a>
+                    <a href="#" class="btns btns_primary send__btn" id="send_btn">Enviar</a>
                 </div>
             </form>
         </section>
@@ -203,14 +203,35 @@
 </body>
 </html>
 
+<!-- modal reenviar codigo-->
+<div class="oculto confirmacion" id="modal-general">
+    <div class="modals">
+        <div class="modal-bodys">
+            <div class="content denegado">
+                <span class="icon-cerrar salir"></span>
+                <h3 class="mensaje">
+                    <span class="icon-alert bg-am"></span>
+                </h3>
+                <h3 id="modalMensaje" class="modalText"></h3>
+            </div>
+        </div>
+    </div>
+</div>
+
 <!--jquery-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js'></script>
 <!--forms-->
 <script src="js/forms_material.js"></script>
+<script src="js/modal.js"></script>
 <!--recaptcha-->
 <script src="https://www.google.com/recaptcha/api.js?render=explicit&onload=onRecaptchaLoadCallback"></script>
 <script>
+
+    $("#send_btn").click(function (){
+        showModal("msg","icon")
+    });
+
 
     $(".radica-boxes__radio").click(function(){
         if($(this).prop("checked") == true && $(this)[0].id == "itemUpload"){

@@ -99,6 +99,3 @@ fileInput.addEventListener( "change", function( event ) {
     the_return.innerHTML = this.value;
 });
 
-$(".ui-state-default").click(function (){
-    console.log("entro")
-});
