@@ -51,24 +51,24 @@
                 </form>
             </div>
             <div id="captchav3" class="captchav3"></div>
-            <a href="#" class="btns btns_primary upload-file__btn">Enviar</a>
+            <a href="#" class="btns btns_primary upload-file__btn" id="upload-file__btn">Enviar</a>
         </section>
         <section class="rad-manual" hidden>
             <h3 class="rad-manual__title">Diligencia los siguientes datos.</h3>
             <form action="enviar" class="row rad-manual__form">
-                <div class="form-group_item col-md-4 col-xs-12">
+                <div class="form-group_item col-sm-6 col-lg-4 col-xs-12">
                     <div class="select">
-                        <select class="select-text" required>
+                        <select class="select-text" id="canal_radicacion" required>
                             <option value="" disabled selected>Seleccione un canal</option>
-                            <option value="1">Corresponsal</option>
-                            <option value="2">ATH</option>
+                            <option value="corresponsal">Corresponsal</option>
+                            <option value="ath">ATH</option>
                         </select>
                         <label class="select-label">Canal de radicación *</label>
                     </div>
                 </div>
-                <div class="form-group_item col-md-4 col-xs-12">
+                <div class="form-group_item col-sm-6 col-lg-4 col-xs-12">
                     <div class="select">
-                        <select class="select-text" required>
+                        <select class="select-text" id="reclamante" required>
                             <option value="" disabled selected>Seleccione reclamante</option>
                             <option value="1">Usuario</option>
                             <option value="2">Corresponsal Bancario</option>
@@ -77,9 +77,9 @@
                         <label class="select-label">Reclamante *</label>
                     </div>
                 </div>
-                <div class="form-group_item col-md-4 col-xs-12">
+                <div class="form-group_item col-sm-6 col-lg-4 col-xs-12">
                     <div class="select">
-                        <select class="select-text" required>
+                        <select class="select-text" id="corresp_trans" required>
                             <option value="" disabled selected>Seleccione un corresponsal</option>
                             <option value="1">Efecty</option>
                             <option value="2">GTECH_Baloto</option>
@@ -89,33 +89,52 @@
                             <option value="6">Tranza S.A.S. - Movilred</option>
                             <option value="7">Maxiservicios</option>
                             <option value="8">Puntored</option>
-                            <option value="9">Otros</option>
+                            <option value="otros">Otros</option>
                         </select>
                         <label class="select-label">Corresponsal donde curso la transacción</label>
                     </div>
                 </div>
-                <div class="form-group_item col-md-4 col-xs-12">
+                <!--ccorresponsal de la transacción "otros"-->
+                <div class="corresponsal_trans form-group_item col-sm-6 col-lg-4 col-xs-12" hidden>
                     <div class="outlined-input-field"> <!--error-input-field-->
-                        <input type="text" id="input_outline" class="input_outline outlined-text-field" autocomplete="off">
+                        <input type="text" maxlength="30" id="name_corresponsal" class="input_outline outlined-text-field" autocomplete="off">
+                        <label for="name_corresponsal">Nombre del corresponsal</label>
+                        <div class="helper-text"></div>
+                    </div>
+                </div>
+                <!--ccorresponsal de la transacción "otros"-->
+                <div class="form-group_item col-sm-6 col-lg-4 col-xs-12">
+                    <div class="outlined-input-field"> <!--error-input-field-->
+                        <input type="text" id="input_outline" maxlength="20" class="input_outline outlined-text-field" autocomplete="off">
                         <label for="input_outline">Número de radicado</label>
                         <div class="helper-text"></div>
                     </div>
                 </div>
-                <div class="form-group_item col-md-4 col-xs-12">
+                <div class="form-group_item col-sm-6 col-lg-4 col-xs-12">
                     <div class="select">
-                        <select class="select-text" required>
+                        <select class="select-text" id="tipologia" required>
                             <option value="" disabled selected>Seleccione una Típologia</option>
                             <option value="1">Abono convenio errado</option>
                             <option value="2">Referencia errada</option>
                             <option value="3">Pago Duplicado/Error Sistema</option>
                             <option value="4">Mayor valor pago</option>
                             <option value="5">Pago no aplicado</option>
-                            <option value="6">Otros</option>
+                            <option value="tipo_otros">Otros</option>
                         </select>
                         <label class="select-label">Típologia *</label>
                     </div>
                 </div>
-                <div class="form-group_item col-md-4 col-xs-12">
+                <!--Campo otros en tipologia-->
+                <div class="tipologia_otros form-group_item col-md-12" hidden>
+                    <h3 class="rad-manual__textlabel">Detalle brevemente la tipologia</h3>
+                    <div class="outlined-input-field">
+                        <textarea type="text" id="textarea_tipologia" maxlength="400" class="textarea__look input_outline outlined-text-field" autocomplete="off"></textarea>
+                        <label for="textarea_comment">Detalle su típologia</label>
+                    </div>
+                    <span class="rad-manual__textmin">Máximo <span class="val_comm">400</span>  caracteres</span>
+                </div>
+                <!-- Fin campo otros en tipologia-->
+                <div class="form-group_item col-sm-6 col-lg-4 col-xs-12">
                     <div id="datepicker-container" class="datepicker-container outlined-input-field">
                         <span class="outline-element-container">
                             <input id="datepicker-input" type="text" class="datepicker-input input_outline outlined-text-field" autocomplete="off">
@@ -124,8 +143,8 @@
                         </span>
                     </div>
                 </div>
-                <div class="form-group_item col-md-4 col-xs-12">
-                    <div class="form-group_item col-md-4 col-xs-12">
+                <div class="form-group_item col-sm-6 col-lg-4 col-xs-12">
+                    <div class="form-group_item col-sm-6 col-lg-4 col-xs-12">
                         <div id="datepicker-container2" class="datepicker-container outlined-input-field">
                         <span class="outline-element-container">
                             <input id="datepicker-input2" type="text" class="datepicker-input2 input_outline outlined-text-field" autocomplete="off">
@@ -135,51 +154,99 @@
                         </div>
                     </div>
                 </div>
-                <div class="form-group_item col-md-4 col-xs-12">
+                <div class="form-group_item col-sm-6 col-lg-4 col-xs-12">
                     <div class="outlined-input-field"> <!--error-input-field-->
-                        <input type="text" id="input_nura" class="input_outline outlined-text-field" autocomplete="off">
+                        <input type="text" id="input_nura" maxlength="20" class="input_outline outlined-text-field" autocomplete="off">
                         <label for="input_nura">Nura errado *</label>
                         <div class="helper-text"></div>
                     </div>
                 </div>
-                <div class="form-group_item col-md-4 col-xs-12">
+                <div class="form-group_item col-sm-6 col-lg-4 col-xs-12">
                     <div class="outlined-input-field"> <!--error-input-field-->
-                        <input type="text" id="input_convenio" class="input_outline outlined-text-field" autocomplete="off">
+                        <input type="text" id="input_convenio" maxlength="30" class="input_outline outlined-text-field" autocomplete="off">
                         <label for="input_convenio">Convenio errado *</label>
                         <div class="helper-text"></div>
                     </div>
                 </div>
-                <div class="form-group_item col-md-4 col-xs-12">
+                <div class="form-group_item col-sm-6 col-lg-4 col-xs-12">
                     <div class="outlined-input-field"> <!--error-input-field-->
-                        <input type="text" id="input_correcto" class="input_outline outlined-text-field" autocomplete="off">
+                        <input type="text" id="input_correcto" maxlength="20" class="input_outline outlined-text-field" autocomplete="off">
                         <label for="input_correcto">Nura correcto *</label>
                         <div class="helper-text"></div>
                     </div>
                 </div>
-                <div class="form-group_item col-md-4 col-xs-12">
+                <div class="form-group_item col-sm-6 col-lg-4 col-xs-12">
                     <div class="outlined-input-field"> <!--error-input-field-->
-                        <input type="text" id="input_convenioCorr" class="input_outline outlined-text-field" autocomplete="off">
+                        <input type="text" id="input_convenioCorr" maxlength="30" class="input_outline outlined-text-field" autocomplete="off">
                         <label for="input_convenioCorr">Convenio correcto *</label>
                         <div class="helper-text"></div>
                     </div>
                 </div>
-                <div class="form-group_item col-md-4 col-xs-12">
+                <div class="form-group_item col-sm-6 col-lg-4 col-xs-12">
                     <div class="outlined-input-field"> <!--error-input-field-->
-                        <input type="text" id="input_transaccion" class="input_outline outlined-text-field" autocomplete="off">
+                        <input type="text" id="input_transaccion" maxlength="20" class="input_outline outlined-text-field" autocomplete="off">
                         <label for="input_transaccion">Valor de la transacción *</label>
                         <div class="helper-text"></div>
                     </div>
                 </div>
-                <div class="form-group_item col-md-4 col-xs-12">
+                <div class="form-group_item col-sm-6 col-lg-4 col-xs-12">
+                    <div class="select">
+                        <select class="select-text" id="datos_abono" required>
+                            <option value="" disabled selected>Seleccione datos de abono</option>
+                            <option value="reintegro_occ">Reintegro Cuenta Occidente</option>
+                            <option value="pago_terceros">Pago a terceros</option>
+                        </select>
+                        <label class="select-label">Datos de abono *</label>
+                    </div>
+                </div>
+                <!--pago a terceros-->
+                <div class="pago_terceros form-group_item col-sm-6 col-lg-4 col-xs-12" hidden>
+                    <div class="double_form">
+                        <div class="select">
+                            <select class="select-text" required>
+                                <option value="" disabled selected>ID</option>
+                                <option value="1">CC</option>
+                                <option value="pago_terceros">TI</option>
+                            </select>
+                            <label class="select-label">Tipo</label>
+                        </div>
+                        <div class="outlined-input-field"> <!--error-input-field-->
+                            <input type="text" maxlength="10px" id="tercero_docuemento" class="input_outline outlined-text-field" autocomplete="off">
+                            <label for="tercero_docuemento">Número de documento *</label>
+                            <div class="helper-text"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pago_terceros form-group_item col-sm-6 col-lg-4 col-xs-12" hidden>
                     <div class="outlined-input-field"> <!--error-input-field-->
-                        <input type="text" id="input_abono" class="input_outline outlined-text-field" autocomplete="off">
-                        <label for="input_abono">Datos de abono *</label>
+                        <input type="text" id="name_tercero" maxlength="30" class="input_outline outlined-text-field" autocomplete="off">
+                        <label for="name_tercero">Nombre *</label>
                         <div class="helper-text"></div>
                     </div>
                 </div>
-                <div class="form-group_item col-md-4 col-xs-12">
+                <!--Fin pago a terceros-->
+                <!--Reintegro cuenta occidente-->
+                <div class="reintegro_cuenta form-group_item col-sm-6 col-lg-4 col-xs-12" hidden>
                     <div class="select">
-                        <select class="select-text" required>
+                        <select class="select-text" id="reintegro_cuenta" required>
+                            <option value="" disabled selected>Seleccione tipo de cuenta</option>
+                            <option value="1">Ahorros</option>
+                            <option value="2">Corriente</option>
+                        </select>
+                        <label class="select-label">Tipo de cuenta *</label>
+                    </div>
+                </div>
+                <div class="reintegro_cuenta form-group_item col-sm-6 col-lg-4 col-xs-12" hidden>
+                    <div class="outlined-input-field"> <!--error-input-field-->
+                        <input type="text" id="numero_cuenta" maxlength="20" class="input_outline outlined-text-field" autocomplete="off">
+                        <label for="numero_cuenta">Número de cuenta *</label>
+                        <div class="helper-text"></div>
+                    </div>
+                </div>
+                <!--Fin reintegro cuenta occidente-->
+                <div class="form-group_item col-sm-6 col-lg-4 col-xs-12">
+                    <div class="select">
+                        <select class="select-text" id="tipo_solicitud" required>
                             <option value="" disabled selected>Seleccione la solicitud</option>
                             <option value="1">Recuperación</option>
                         </select>
@@ -189,10 +256,10 @@
                 <div class="form-group_item col-md-12">
                     <h3 class="rad-manual__textlabel">Cuéntanos brevemente la situación por la cual quieres hacer la radicación</h3>
                     <div class="outlined-input-field"> <!--error-input-field-->
-                        <textarea type="text" id="textarea_comment" class="textarea__look input_outline outlined-text-field" autocomplete="off"></textarea>
+                        <textarea type="text" id="textarea_comment" maxlength="400" class="textarea__look input_outline outlined-text-field" autocomplete="off"></textarea>
                         <label for="textarea_comment">Observaciones</label>
                     </div>
-                    <span class="rad-manual__textmin">Máximo 400 caracteres</span>
+                    <span class="rad-manual__textmin">Máximo <span class="val_comm">400</span> caracteres</span>
                     <div id="captchav4" class="captchav4 captcha"></div>
                     <a href="#" class="btns btns_primary send__btn" id="send_btn">Enviar</a>
                 </div>
@@ -203,17 +270,14 @@
 </body>
 </html>
 
-<!-- modal reenviar codigo-->
-<div class="oculto confirmacion" id="modal-general">
+<!-- modal generico-->
+<div class="oculto modal-generic" id="modal-general">
     <div class="modals">
-        <div class="modal-bodys">
-            <div class="content denegado">
-                <span class="icon-cerrar salir"></span>
-                <h3 class="mensaje">
-                    <span class="icon-alert bg-am"></span>
-                </h3>
-                <h3 id="modalMensaje" class="modalText"></h3>
-            </div>
+        <span class="icon-equis salir exit-modal"></span>
+        <div class="content">
+            <h3 class="modal-generic__title"></h3>
+            <p class="modal-generic__text modalText"></p>
+            <a href="#" class="btns_link modal-generic__link exit-modal">Regresar</a>
         </div>
     </div>
 </div>
@@ -224,40 +288,8 @@
 <!--forms-->
 <script src="js/forms_material.js"></script>
 <script src="js/modal.js"></script>
+<script src="js/validation_form.js"></script>
 <!--recaptcha-->
 <script src="https://www.google.com/recaptcha/api.js?render=explicit&onload=onRecaptchaLoadCallback"></script>
-<script>
 
-    $("#send_btn").click(function (){
-        showModal("msg","icon")
-    });
-
-
-    $(".radica-boxes__radio").click(function(){
-        if($(this).prop("checked") == true && $(this)[0].id == "itemUpload"){
-            $(".upload-file").removeAttr("hidden")
-            $(".rad-manual").attr("hidden","hidden")
-        }else{
-            $(".rad-manual").removeAttr("hidden")
-            $(".upload-file").attr("hidden","hidden")
-        }
-    })
-
-    function onRecaptchaLoadCallback() {
-        var clientId = grecaptcha.render('captchav4', {
-            'sitekey': '6LdvEmobAAAAAIH5HUTOt3ThiKgzI4zDE78spEpR',
-            'badge': 'inline',
-            'size': 'invisible'
-        });
-
-        grecaptcha.ready(function() {
-            grecaptcha.execute(clientId, {
-                action: 'action_name'
-            })
-                .then(function(token) {
-                    // Verify the token on the server.
-                });
-        });
-    }
-</script>
 
