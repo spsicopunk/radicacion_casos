@@ -30,6 +30,12 @@ h1, h2, h3, h4, h5, h6, p, span, ul {
   margin: 0;
 }
 
+* {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
 body {
   background: #f4f4f4;
   font: 14px/1.3 "gelion-regular";
@@ -44,6 +50,10 @@ body {
   max-width: 1014px;
   width: calc(100% - 30px);
   margin: 0 auto;
+}
+
+.banner-generic .banner-generic__img {
+  width: 100%;
 }
 
 .box-primary {
@@ -254,7 +264,7 @@ body {
   font: 14px/1.3 "gelion-regular";
   background-color: transparent;
   width: 100%;
-  padding: 11px 10px 10px 14px;
+  padding: 10px;
   font-size: 16px;
   border-radius: 4px;
   border: 1px solid #5D5D5D;
@@ -1633,6 +1643,43 @@ body {
 }
 .radica-block .upload-file .upload-file__btn {
   margin: 30px auto 50px;
+}
+
+.modulo-adm .table thead {
+  background: #008ACC;
+  color: #FFFFFF;
+}
+.modulo-adm .table thead tr {
+  border: 0px;
+}
+.modulo-adm .table thead tr th {
+  border: 0px;
+  text-align: center;
+  font: 16px/1.3 "gelion-regular";
+  vertical-align: middle;
+  padding: 15px;
+}
+.modulo-adm .table tbody tr td {
+  text-align: center;
+  font: 14px/1.3 "gelion-regular";
+  vertical-align: middle;
+  padding: 10px;
+  color: #5D5D5D;
+}
+.modulo-adm .table tbody tr td [class*=icon-] {
+  font-size: 25px;
+  cursor: pointer;
+}
+.modulo-adm .dataTables_paginate {
+  display: flex;
+  justify-content: flex-end;
+}
+.modulo-adm .dataTables_paginate .paginate_button {
+  margin: 0 10px;
+  cursor: pointer;
+}
+.modulo-adm #DataTables_Table_0_length, .modulo-adm .dataTables_info {
+  display: none;
 }
 
 /*# sourceMappingURL=main.css.map */

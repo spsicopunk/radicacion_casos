@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login Corresponsales</title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+<div class="container-full bg_login">
+  <div class="box-primary login-radicacion">
+    <img src="./assets/img/brand_occ.png" alt="brand_occidente">
+    <h1 class="login-radicacion__title">INGRESA A TU PORTAL ADMINISTRADOR CORRESPONSAL</h1>
+    <img src="./assets/img/security.png" alt="securty">
+    <form action="enviar" class="row login-radicacion__form">
+      <div class="outlined-input-field"> <!--error-input-field-->
+        <input type="text" id="input_user" maxlength="20" class="input_outline outlined-text-field" autocomplete="off">
+        <label for="input_user">Usuario</label>
+        <div class="helper-text"></div>
+      </div>
+      <div class="outlined-input-field"> <!--error-input-field-->
+        <input type="password" id="input_password" maxlength="20" class="input_outline outlined-text-field" autocomplete="off">
+        <label for="input_password">Contraseña</label>
+        <div class="helper-text"></div>
+      </div>
+      <a href="#" class="btns_link login-radicacion__forgot">Olvide mi clave</a>
+      <div id="captchav4" class="captchav4 captcha"></div>
+      <a href="#" class="btns btns_primary send__btn" id="send_btn">Ingresar</a>
+    </form>
+  </div>
+</div>
+</body>
+</html>
+<!-- modal generico-->
+<div class="oculto modal-generic" id="modal-general">
+  <div class="modals">
+    <span class="icon-equis salir exit-modal"></span>
+    <div class="content">
+      <h3 class="modal-generic__title"></h3>
+      <p class="modal-generic__text modalText"></p>
+      <a href="#" class="btns_link modal-generic__link exit-modal">Regresar</a>
+    </div>
+  </div>
+</div>
+<!--jquery-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js'></script>
+<!--forms-->
+<script src="js/forms_material.js"></script>
+<script src="js/modal.js"></script>
+<script src="js/validation_form.js"></script>
+<!--recaptcha-->
+<script src="https://www.google.com/recaptcha/api.js?render=explicit&onload=onRecaptchaLoadCallback"></script>

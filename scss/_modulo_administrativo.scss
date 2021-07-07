@@ -1,0 +1,44 @@
+.modulo-adm{
+  .table{
+    thead{
+      background: $bluePrim;
+      color: $white;
+      tr{
+        border: 0px;
+        th{
+          border: 0px;
+          text-align: center;
+          font: $textModal;
+          vertical-align: middle;
+          padding: 15px;
+        }
+      }
+    }
+    tbody{
+      tr{
+        td{
+          text-align: center;
+          font: $inputText;
+          vertical-align: middle;
+          padding: 10px;
+          color: $gray;
+          [class*="icon-"]{
+              font-size: 25px;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+  .dataTables_paginate{
+    display: flex;
+    justify-content: flex-end;
+    .paginate_button{
+      margin: 0 10px;
+      cursor: pointer;
+    }
+  }
+  #DataTables_Table_0_length, .dataTables_info{
+    display: none;
+  }
+}

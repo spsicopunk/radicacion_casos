@@ -54,8 +54,8 @@ function datepickerPow(classId){
 
 //Configuración de idioma jquery datepicker
 
-$.datepicker.regional['ES'] = {clearText: 'Effacer', clearStatus: '',
-    currentText: 'Fecha Actual',
+$.datepicker.regional['ES'] = {
+    clearText: 'Effacer', clearStatus: '',currentText: 'Fecha Actual',
     currentStatus: 'Voir le mois courant',
     monthNames: ['Janvier','Février','Mars','Avril','Mai','Juin',
         'Juillet','Août','Septembre','Octobre','Novembre','Décembre'],

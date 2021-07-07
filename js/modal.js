@@ -20,3 +20,22 @@ $(".exit-modal").click(function (){
     $(".modal-generic").fadeOut();
     $(".modal-generic .modal-generic__title").removeClass("error");
 });
+
+
+/* ------------------------------ Login ------------------------------- */
+
+/* Olvido de contraseña */
+$(".login-radicacion__forgot").click(function (){
+    showModal("nope","¿Olvido su clave?","Comuniquese con el administrador de corresponsal para reestablecer su clave.");
+});
+
+/* ------------------------------ Modulo Administrativo ------------------------------- */
+
+/* Agregar Usuario */
+$(".modulo-adm__edit").click(function (){
+    showModal("nope","¿O lvido su clave?","Comuniquese con el administrador de corresponsal para reestablecer su clave.");
+});
+/* Editar Usuario */
+$(".modulo-adm__edit").click(function (){
+    showModal("nope","¿O lvido su clave?","Comuniquese con el administrador de corresponsal para reestablecer su clave.");
+});
