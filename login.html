@@ -7,24 +7,33 @@
 </head>
 <body>
 <div class="container-full bg_login">
+  <img src="./assets/img/banner-login.png" class="bg_login-img" alt="banner principal">
   <div class="box-primary login-radicacion">
-    <img src="./assets/img/brand_occ.png" alt="brand_occidente">
+    <img src="./assets/img/brand_occ.png" class="bg_login-brand" alt="brand_occidente">
     <h1 class="login-radicacion__title">INGRESA A TU PORTAL ADMINISTRADOR CORRESPONSAL</h1>
-    <img src="./assets/img/security.png" alt="securty">
+    <div class="bg_login-content">
+      <img src="./assets/img/security.png" class="bg_login-security" alt="securty">
+    </div>
     <form action="enviar" class="row login-radicacion__form">
-      <div class="outlined-input-field"> <!--error-input-field-->
-        <input type="text" id="input_user" maxlength="20" class="input_outline outlined-text-field" autocomplete="off">
-        <label for="input_user">Usuario</label>
-        <div class="helper-text"></div>
+      <div class="form-group_item col-xs-12">
+        <div class="outlined-input-field"> <!--error-input-field-->
+          <input type="text" id="input_user" maxlength="20" class="input_outline outlined-text-field" autocomplete="off">
+          <label for="input_user">Usuario</label>
+          <div class="helper-text"></div>
+        </div>
       </div>
-      <div class="outlined-input-field"> <!--error-input-field-->
-        <input type="password" id="input_password" maxlength="20" class="input_outline outlined-text-field" autocomplete="off">
-        <label for="input_password">Contraseña</label>
-        <div class="helper-text"></div>
+      <div class="form-group_item col-xs-12">
+        <div class="outlined-input-field"> <!--error-input-field-->
+          <input type="password" id="input_password" maxlength="20" class="input_outline outlined-text-field" autocomplete="off">
+          <label for="input_password">Contraseña</label>
+          <span class="icon-eye_hide"></span>
+        </div>
       </div>
-      <a href="#" class="btns_link login-radicacion__forgot">Olvide mi clave</a>
-      <div id="captchav4" class="captchav4 captcha"></div>
-      <a href="#" class="btns btns_primary send__btn" id="send_btn">Ingresar</a>
+      <div class="form-group_item col-xs-12">
+        <a href="#" class="btns_link login-radicacion__forgot">Olvide mi clave</a>
+        <div id="captchav4" class="captchav4 captcha"></div>
+        <a href="/modulo_administrativo.html" class="btns btns_primary send__btn" id="send_btn"><span class="icon-login"></span>INGRESAR</a>
+      </div>
     </form>
   </div>
 </div>

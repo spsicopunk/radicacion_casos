@@ -1,0 +1,69 @@
+.bg_login{
+  display: table;
+  width: 100%;
+  .bg_login-img{
+    display: table;
+    width: 100%;
+    height: 700px;
+    object-fit: cover;
+    @media screen and (max-width: 768px) {
+      display: none;
+    }
+  }
+  .login-radicacion{
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    max-width: 500px;
+    padding: 30px;
+    @media screen and (max-width: 768px) {
+      position: relative;
+      top: 30px;
+      right: 0px;
+      margin: 0 auto;
+      width: 90%;
+    }
+    .bg_login-content{
+      width: 100%;
+      display: table;
+      .bg_login-security{
+          float: right;
+          margin-bottom: 20px;
+      }
+    }
+    .bg_login-brand{
+      margin: 20px auto;
+      display: table;
+      max-width: 270px;
+      width: 100%;
+    }
+    .login-radicacion__title{
+        font: $textModal;
+        text-align: center;
+        font-weight: bold;
+        width: 80%;
+        margin: 0 auto 10px;
+      @media screen and (max-width: 768px) {
+          width: 100%;
+      }
+    }
+    .login-radicacion__form{
+      .captcha {
+        margin: 30px auto 40px;
+        display: table;
+      }
+      .send__btn{
+        margin: 0px auto 20px;
+      }
+      .outlined-input-field{
+        [class*="icon"]{
+          position: absolute;
+          top: 9px;
+          right: 10px;
+          font-size: 25px;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

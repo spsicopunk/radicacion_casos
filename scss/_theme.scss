@@ -173,7 +173,7 @@ body{
     color: $white;
     text-decoration: none;
     [class*="icon"]{
-      margin-left: 10px;
+      margin: 0px 5px;
       font-size: 25px;
       &:before{
         color: $white;

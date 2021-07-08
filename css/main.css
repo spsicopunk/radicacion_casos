@@ -97,7 +97,7 @@ body {
   text-decoration: none;
 }
 .btns.btns_primary [class*=icon] {
-  margin-left: 10px;
+  margin: 0px 5px;
   font-size: 25px;
 }
 .btns.btns_primary [class*=icon]:before {
@@ -1669,8 +1669,83 @@ body {
   margin: 30px auto 50px;
 }
 
+.bg_login {
+  display: table;
+  width: 100%;
+}
+.bg_login .bg_login-img {
+  display: table;
+  width: 100%;
+  height: 700px;
+  object-fit: cover;
+}
+@media screen and (max-width: 768px) {
+  .bg_login .bg_login-img {
+    display: none;
+  }
+}
+.bg_login .login-radicacion {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  max-width: 500px;
+  padding: 30px;
+}
+@media screen and (max-width: 768px) {
+  .bg_login .login-radicacion {
+    position: relative;
+    top: 30px;
+    right: 0px;
+    margin: 0 auto;
+    width: 90%;
+  }
+}
+.bg_login .login-radicacion .bg_login-content {
+  width: 100%;
+  display: table;
+}
+.bg_login .login-radicacion .bg_login-content .bg_login-security {
+  float: right;
+  margin-bottom: 20px;
+}
+.bg_login .login-radicacion .bg_login-brand {
+  margin: 20px auto;
+  display: table;
+  max-width: 270px;
+  width: 100%;
+}
+.bg_login .login-radicacion .login-radicacion__title {
+  font: 16px/1.3 "gelion-regular";
+  text-align: center;
+  font-weight: bold;
+  width: 80%;
+  margin: 0 auto 10px;
+}
+@media screen and (max-width: 768px) {
+  .bg_login .login-radicacion .login-radicacion__title {
+    width: 100%;
+  }
+}
+.bg_login .login-radicacion .login-radicacion__form .captcha {
+  margin: 30px auto 40px;
+  display: table;
+}
+.bg_login .login-radicacion .login-radicacion__form .send__btn {
+  margin: 0px auto 20px;
+}
+.bg_login .login-radicacion .login-radicacion__form .outlined-input-field [class*=icon] {
+  position: absolute;
+  top: 9px;
+  right: 10px;
+  font-size: 25px;
+  cursor: pointer;
+}
+
 .modulo-adm {
   padding: 30px;
+}
+.modulo-adm .table {
+  width: 100% !important;
 }
 .modulo-adm .dataTables_filter {
   display: flex;

@@ -27,6 +27,6 @@ $(".exit-modal").click(function (){
 
 /* Olvido de contraseña */
 $(".login-radicacion__forgot").click(function (){
-    showModal("nope","¿Olvido su clave?","Comuniquese con el administrador de corresponsal para reestablecer su clave.");
+    showModal("modal-generic", "nope","¿Olvido su clave?","Comuniquese con el administrador de corresponsal para reestablecer su clave.");
 });
 

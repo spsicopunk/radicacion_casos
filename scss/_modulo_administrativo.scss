@@ -1,5 +1,8 @@
 .modulo-adm{
   padding: 30px;
+  .table{
+    width: 100% !Important;
+  }
   .dataTables_filter{
     display: flex;
     align-items: center;

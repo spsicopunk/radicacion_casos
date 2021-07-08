@@ -1,7 +1,8 @@
 /* ------------------- Datatable -------------------- */
 
 $('table').dataTable({
-    "pageLength": 2,
+    responsive: true,
+    "pageLength": 3,
     language: {
         zeroRecords:    "No se encontraron datos",
         sSearch: "<label class='modulo-adm__label'>Buscar Cliente</label>",
