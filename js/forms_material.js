@@ -4,13 +4,13 @@ $('.input_outline').focusin(function() {
     $('#'+ $(this)[0].id + ' ~ label').animate({
         'fontSize': '14px',
         'top': '-0.7rem',
-        'padding': '3px 4px'
+        'padding': '0px 4px'
     }, 80);
 });
 $('.input_outline').focusout(function() {
     if ($(this).val() === '') {
         $('#'+ $(this)[0].id + ' ~ label').animate({
-            'fontSize': '1rem',
+            'fontSize': '16px',
             'top': '10px',
             'padding': 0
         }, 80);

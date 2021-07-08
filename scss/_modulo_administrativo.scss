@@ -1,4 +1,57 @@
 .modulo-adm{
+  padding: 30px;
+  .dataTables_filter{
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    @media screen and (max-width: 800px) {
+      flex-direction: column;
+    }
+      > label{
+        display: flex;
+        flex-direction: column;
+        width: 300px;
+        position: relative;
+        margin-bottom: 0px;
+        @media screen and (max-width: 800px) {
+          max-width: 300px;
+          width: 100%;
+        }
+      }
+    .btns_group{
+      display: flex;
+      width: 100%;
+      align-items: center;
+      @media screen and (max-width: 800px) {
+        justify-content: center;
+      }
+      > [class*="btns"]{
+        margin-top: 30px;
+        margin-left: 30px;
+        @media screen and (max-width: 800px) {
+          margin: 20px 10px 0px;
+        }
+      }
+    }
+      .modulo-adm__label{
+        font: $textModal;
+        color: $bluePrim;
+        margin-bottom: 10px;
+        + [type="search"]{
+          border: 1px solid $bluePrim;
+          border-radius: 4px;
+          padding: 10px;
+          outline: none;
+          font: $inputText;
+        }
+        ~ [class*="icon-"]{
+          position: absolute;
+          right: 8px;
+          top: 38px;
+          font-size: 25px;
+        }
+      }
+  }
   .table{
     thead{
       background: $bluePrim;
@@ -16,6 +69,9 @@
     }
     tbody{
       tr{
+        &.even{
+          background: $whiteGray;
+        }
         td{
           text-align: center;
           font: $inputText;
@@ -34,11 +90,69 @@
     display: flex;
     justify-content: flex-end;
     .paginate_button{
-      margin: 0 10px;
+      padding: 0 5px;
+      margin: 0 5px;
       cursor: pointer;
+      color: $gray;
+      font: $textModal;
+      text-decoration: none;
+      &.current, &:focus{
+        color: $bluePrim;
+        outline: none;
+        font-weight: bold;
+        border-bottom: 2px solid $bluePrim;
+      }
+      &.previous, &.next{
+        font-weight: bold;
+        color: $bluePrim;
+        &.disabled{
+          color: $gray;
+        }
+      }
+
     }
   }
   #DataTables_Table_0_length, .dataTables_info{
     display: none;
   }
+  .table-bordered>tbody>tr>td, .table-bordered>tbody>tr>th, .table-bordered>tfoot>tr>td, .table-bordered>tfoot>tr>th, .table-bordered>thead>tr>td, .table-bordered>thead>tr>th{
+    border: none;
+  }
+}
+.modal-generic.modal-agregar, .modal-generic.modal-editar{
+  .modals{
+    max-width: 700px;
+    .modal-generic__title{
+      text-align: center;
+      color: $bluePrim;
+    }
+    .modal-generic__text{
+      text-align: center;
+      margin-bottom: 50px;
+    }
+    .modal-agregar__form{
+      max-width: 550px;
+      width: 100%;
+      margin: 0 auto;
+      .btns_group{
+        margin: 20px 0px;
+        display: flex;
+        justify-content: center;
+        .btns{
+          margin: 0 10px;
+        }
+      }
+    }
+  }
+}
+.col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9{
+  width: auto;
+  float: inherit;
+  position: relative;
+  min-height: 1px;
+  padding-right: inherit;
+  padding-left: inherit;
+}
+.btn-group-vertical>.btn-group:after, .btn-group-vertical>.btn-group:before, .btn-toolbar:after, .btn-toolbar:before, .clearfix:after, .clearfix:before, .container-fluid:after, .container-fluid:before, .container:after, .container:before, .dl-horizontal dd:after, .dl-horizontal dd:before, .form-horizontal .form-group:after, .form-horizontal .form-group:before, .modal-footer:after, .modal-footer:before, .nav:after, .nav:before, .navbar-collapse:after, .navbar-collapse:before, .navbar-header:after, .navbar-header:before, .navbar:after, .navbar:before, .pager:after, .pager:before, .panel-body:after, .panel-body:before, .row:after, .row:before{
+  display: none;
 }

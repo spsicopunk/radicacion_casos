@@ -171,8 +171,28 @@ body{
   &.btns_primary{
     background: $bluePrim;
     color: $white;
+    text-decoration: none;
+    [class*="icon"]{
+      margin-left: 10px;
+      font-size: 25px;
+      &:before{
+        color: $white;
+      }
+    }
     &:hover{
+      text-decoration: none;
       background: $blueSecond;
+    }
+    &.outlined{
+      background: $white;
+      color: $bluePrim;
+      border: 1px solid $bluePrim;
+      &:hover{
+        text-decoration: none;
+        background: $bluePrim;
+        border: none;
+        color: $white;
+      }
     }
   }
 }
@@ -180,6 +200,10 @@ body{
   font: $titleDescriptionMedium;
   color: $bluePrim;
   text-decoration: none;
+  transition: all .3s;
+  &:hover{
+    color: $blueSecond;
+  }
 }
 
 //forms

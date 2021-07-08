@@ -79,31 +79,116 @@
 </html>
 
 <!-- modal Agregar-->
-<div class="oculto modal-generic" id="modal-agregar">
+<div class="oculto modal-generic modal-agregar" id="modal-agregar">
   <div class="modals">
     <span class="icon-equis salir exit-modal"></span>
     <div class="content">
       <h3 class="modal-generic__title"></h3>
       <p class="modal-generic__text modalText"></p>
-      <a href="#" class="btns_link modal-generic__link exit-modal">Regresar</a>
+      <form action="enviar" class="row modal-agregar__form">
+        <div class="form-group_item col-sm-6 col-xs-12">
+          <div class="outlined-input-field">
+            <input type="text" id="name_client" maxlength="20" class="input_outline outlined-text-field" autocomplete="off">
+            <label for="name_client">Nombre de cliente</label>
+            <div class="helper-text"></div>
+          </div>
+        </div>
+        <div class="form-group_item col-sm-6 col-xs-12">
+          <div class="select">
+            <select class="select-text" id="canal_radicacion" required>
+              <option value="" disabled selected>Seleccione un rol</option>
+              <option value="corresponsal">Administrador</option>
+              <option value="ath">Radicador de casos</option>
+            </select>
+            <label class="select-label">Rol *</label>
+          </div>
+        </div>
+        <div class="form-group_item col-sm-6 col-xs-12">
+          <div class="outlined-input-field"> <!--error-input-field-->
+            <input type="text" id="cedula" maxlength="20" class="input_outline outlined-text-field" autocomplete="off">
+            <label for="cedula">Cédula</label>
+            <div class="helper-text"></div>
+          </div>
+        </div>
+        <div class="form-group_item col-sm-6 col-xs-12">
+          <div class="outlined-input-field"> <!--error-input-field-->
+            <input type="text" id="correo_adm" maxlength="20" class="input_outline outlined-text-field" autocomplete="off">
+            <label for="correo_adm">Correo electronico</label>
+            <div class="helper-text"></div>
+          </div>
+        </div>
+        <div class="form-group_item col-sm-6 col-xs-12">
+          <div class="outlined-input-field"> <!--error-input-field-->
+            <input type="text" id="celular_adm" maxlength="20" class="input_outline outlined-text-field" autocomplete="off">
+            <label for="celular_adm">Celular</label>
+            <div class="helper-text"></div>
+          </div>
+        </div>
+        <div class="btns_group col-xs-12">
+          <a href="#" class="btns btns_primary outlined exit-modal">REGRESAR</a>
+          <a href="#" class="btns btns_primary save-add">GUARDAR</a>
+        </div>
+      </form>
     </div>
   </div>
 </div>
 
 <!-- modal Editar-->
-<div class="oculto modal-generic" id="modal-editar">
+<div class="oculto modal-generic modal-editar" id="modal-editar">
   <div class="modals">
     <span class="icon-equis salir exit-modal"></span>
     <div class="content">
       <h3 class="modal-generic__title"></h3>
       <p class="modal-generic__text modalText"></p>
-      <a href="#" class="btns_link modal-generic__link exit-modal">Regresar</a>
+      <form action="enviar" class="row modal-agregar__form">
+        <div class="form-group_item col-sm-6 col-xs-12">
+          <div class="outlined-input-field">
+            <input type="text" id="edit-name_client" maxlength="30"  value="Jane Cooper" class="input_outline outlined-text-field" autocomplete="off">
+            <label for="edit-name_client">Nombre de cliente</label>
+            <div class="helper-text"></div>
+          </div>
+        </div>
+        <div class="form-group_item col-sm-6 col-xs-12">
+          <div class="select">
+            <select class="select-text" id="edit-canal_radicacion" required>
+              <option value="corresponsal" selected>Administrador</option>
+              <option value="ath">Radicador de casos</option>
+            </select>
+            <label class="select-label">Rol *</label>
+          </div>
+        </div>
+        <div class="form-group_item col-sm-6 col-xs-12">
+          <div class="outlined-input-field"> <!--error-input-field-->
+            <input type="text" id="edit-cedula" value="104569821" maxlength="10" class="input_outline outlined-text-field" autocomplete="off">
+            <label for="edit-cedula">Cédula</label>
+            <div class="helper-text"></div>
+          </div>
+        </div>
+        <div class="form-group_item col-sm-6 col-xs-12">
+          <div class="outlined-input-field"> <!--error-input-field-->
+            <input type="text" id="edit-correo_adm" value="cameroin_87@gmail.com" maxlength="40" class="input_outline outlined-text-field" autocomplete="off">
+            <label for="edit-correo_adm">Correo electronico</label>
+            <div class="helper-text"></div>
+          </div>
+        </div>
+        <div class="form-group_item col-sm-6 col-xs-12">
+          <div class="outlined-input-field"> <!--error-input-field-->
+            <input type="text" id="edit-celular_adm" value="3112658974" maxlength="10" class="input_outline outlined-text-field" autocomplete="off">
+            <label for="edit-celular_adm">Celular</label>
+            <div class="helper-text"></div>
+          </div>
+        </div>
+        <div class="btns_group col-xs-12">
+          <a href="#" class="btns btns_primary outlined exit-modal">REGRESAR</a>
+          <a href="#" class="btns btns_primary save-edit">GUARDAR</a>
+        </div>
+      </form>
     </div>
   </div>
 </div>
 
 <!-- modal generico-->
-<div class="oculto modal-generic" id="modal-general">
+<div class="oculto modal-generic modal_mesagge" id="modal-general">
   <div class="modals">
     <span class="icon-equis salir exit-modal"></span>
     <div class="content">
@@ -122,4 +207,4 @@
 <script src="js/forms_material.js"></script>
 <script src="js/modal.js"></script>
 <script src="js/validation_form.js"></script>
-<script src="js/datatable_adm.js"></script>
+<script src="js/modulo_administrativo.js"></script>
