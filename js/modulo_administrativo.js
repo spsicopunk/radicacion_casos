@@ -2,7 +2,7 @@
 
 $('table').dataTable({
     responsive: true,
-    "pageLength": 3,
+    "pageLength": 6,
     language: {
         zeroRecords:    "No se encontraron datos",
         sSearch: "<label class='modulo-adm__label'>Buscar Cliente</label>",
@@ -17,7 +17,7 @@ $('table').dataTable({
 
 $("#DataTables_Table_0_filter input").attr("placeholder","Busca por nombre o cédula")
 $("<span class='icon-search'></span>").appendTo("#DataTables_Table_0_filter > label")
-$('<div class="btns_group"><a href="#" class="btns btns_primary modal-generic__agregar">Crear Usuario <span class="icon-login"></span></a><a href="/Radicacion_casos.html" target="_blank" class="btns_link modal-generic__link">Radicar casos ></a></div>').appendTo("#DataTables_Table_0_filter")
+$('<div class="btns_group"><a href="#" class="btns btns_primary modal-generic__agregar">Crear Usuario <span class="icon-login"></span></a><a href="Radicacion_casos.html" target="_blank" class="btns_link modal-generic__link">Radicar casos ></a></div>').appendTo("#DataTables_Table_0_filter")
 
 
 /* -------------------- Modals --------------------- */
