@@ -1206,7 +1206,6 @@ body {
 
 .icon-eye_show:before {
   content: "";
-  color: #008acc;
 }
 
 .icon-login:before {

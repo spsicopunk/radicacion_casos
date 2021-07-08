@@ -26,7 +26,7 @@
         <div class="outlined-input-field"> <!--error-input-field-->
           <input type="password" id="input_password" maxlength="20" class="input_outline outlined-text-field" autocomplete="off">
           <label for="input_password">Contraseña</label>
-          <span class="icon-eye_hide"></span>
+          <span class="pass_change icon-eye_hide"></span>
         </div>
       </div>
       <div class="form-group_item col-xs-12">
@@ -59,3 +59,18 @@
 <script src="js/validation_form.js"></script>
 <!--recaptcha-->
 <script src="https://www.google.com/recaptcha/api.js?render=explicit&onload=onRecaptchaLoadCallback"></script>
+
+<script>
+  // ------------------ Login ------------------------
+
+  $(".pass_change").click(function(){
+    if($(this).attr("class") == "pass_change icon-eye_hide"){
+      $("#input_password").attr("type","text")
+      $(this).attr("class","pass_change icon-eye_show")
+    }else{
+      $("#input_password").attr("type","password")
+      $(this).attr("class","pass_change icon-eye_hide")
+    }
+  });
+
+</script>
